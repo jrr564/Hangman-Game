@@ -4,39 +4,37 @@
 	<title>Hangman Game Meme Style</title>
 	<meta charset="UTF-8">
 	<title>Index</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
-	<script src="assets/javascript/game.js"></script>
 </head>
 <body>
-	<div id="container">
-		<header>
-			<h1>MEME HANGMAN</h1>
-		</header>
-		<div id="main-container" class="container">
-			<section id="image">
-				
-			</section>
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-header">
+	      <h1>MEME HANGMAN</h1>
+	    </div>
+	  </div>
+	</nav>
 
-			<section id="text-content">
-				<div id="word">
-                	<h4>Yr Word:</h4>
-                	<p><strong id="goalWord"></strong></p>
-            	</div>
-            	 <div id="guesses">
-                	<h4>You have guessed</h4>
-                	<p><strong id="previousGuesses"><em>none. Hurry up and guess.</em></strong></p>
-            	</div>
-				<div class="row">
-                <div id="results">
-                    <br/>
-                    <br/>
-                    <br/>
-                    <input type="text" maxlength="1" id="guess" placeholder="Type any letter" />
-                </div>
-            </div>
-			</section>
-		</div>
+	<div id="image">
 	</div>
+	<div id="container">
+		<input id="guess" type="text">
+		<input type="button" value="guess" onClick="guessOne()"/>
+		<p id="message"></p>
+		<p>
+		<span id="answer">puzzle loading..</span></font>
+		</p>
+	</div>
+	<nav class="navbar navbar-default">
+	  <div class="container-fluid">
+	    <div class="navbar-footer">
+	      <h1>Like Hangman but with memes</h1>
+	    </div>
+	  </div>
+	</nav>
+		
+<script type="text/javascript" src="assets/javascript/game.js"></script>
 
 </body>
 </html>
