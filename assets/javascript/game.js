@@ -1,19 +1,24 @@
-//define some variables
+//define some global variables
 //bank of words to guess
 var wordList = [
         "drakeposting",
-          "distracted",
-          "aliens"
+        "jordan",
+        "success",
+        "girlfriend",
+        "arthur",
+        "futurama",
+        "spongebob",
+        "wonka",    
+        "aliens"
 ];
 
-// the word we want someone to guess
-var word="";
-// where we put the answer
-var target = [];
+var word=""; // the word we want someone to guess
+var target = []; // where we put the answer
+var guessesLeft = 8;
+var guessedLetters = [];
 
 //so everything can load
-function shell(){
-  // Pick a random word
+function shell(){ // Pick a random word
   word = wordList[Math.floor(Math.random() * wordList.length)];
   // Set up the answer array
   target = [];
@@ -21,12 +26,13 @@ function shell(){
     target[i] = "_";
   }
   document.getElementById("answer").innerHTML= target.join(" ");
-  document.getElementById("message").innerHTML= "Type a letter then press guess."
+  document.getElementById("pic").src= "Aliens.jpg";
+  document.getElementById("message").innerHTML= "Pick a letter. Hit Guess.";
+  document.getElementById("guessed").innerHTML= guessedLetters;
 }
 shell();
-//request input and game starts
 
-// prompt("Press any key to get going.");
+//request input and game starts
 function guessOne() {
     // Get a guess from the player
     var guess = document.getElementById("guess").value;
@@ -39,7 +45,7 @@ function guessOne() {
         for (i = 0; i < word.length; i++) {
             if (word[i] === guess) {
                 target[i] = guess;
-                showThisMessage = "YES! "+guess+" is in the answer";
+                showThisMessage = "Booyah! "+guess+" is in the answer"
             }
         }
 
@@ -60,6 +66,9 @@ function guessOne() {
         // (otherwise) if we have no message, wrong guess 
         if (showThisMessage === "") {
             showThisMessage = "Sorry, no "+guess;
+            guessedLetters.push(guess);
+            document.getElementById("guessed").innerHTML= guessedLetters;
+
         }
 
         // Update the puzzle

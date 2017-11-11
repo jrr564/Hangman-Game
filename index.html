@@ -8,33 +8,30 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
 <body>
-	<nav class="navbar navbar-default">
-	  <div class="container-fluid">
-	    <div class="navbar-header">
-	      <h1>MEME HANGMAN</h1>
-	    </div>
-	  </div>
-	</nav>
-
-	<div id="image">
+	<div class="page-header">
+	  <h1>Meme Hangman</h1>
 	</div>
-	<div id="container">
+	<div class="row">
+		<div class="col-md-6">
+			<img src= "Aliens.jpg" id="pic">
+		</div>
+		<div id="container" class="col-md-6">	
+			<div class="row text-center" class="row">
+				<p id="answer"></p>
+			</div>
+			<div class="row text-center" class="row">
+				<p id="guessed"></p>
+			</div>
+		</div>	
+	</div>
+	<div class="row text-center" class="row">
 		<input id="guess" type="text">
-		<input type="button" value="guess" onClick="guessOne()"/>
-		<p id="message"></p>
-		<p>
-		<span id="answer">puzzle loading..</span></font>
-		</p>
+		<input class="btn btn-default" type="button" value="guess" onClick="guessOne()"/>
 	</div>
-	<nav class="navbar navbar-default">
-	  <div class="container-fluid">
-	    <div class="navbar-footer">
-	      <h1>Like Hangman but with memes</h1>
-	    </div>
-	  </div>
-	</nav>
-		
-<script type="text/javascript" src="assets/javascript/game.js"></script>
+	<footer class="fixed-bottom">
+		<h1 id="message"></h1>
+	</footer>
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
 
 </body>
 </html>
