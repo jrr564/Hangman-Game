@@ -22,11 +22,11 @@ p, footer, h1, button, #btn-default {
   2px 2px 5px #000;
 }
 
+
+
 #container {
-  
   width: 400px;
-  height: 200px;
-  padding: 5px;
+/*  padding: 5px;*/
   margin: 20px;
   float: left;
 }
@@ -68,7 +68,7 @@ img {
   border: 5px solid #696969;
   padding: 5px;
   margin: 20px;
-  float: right;
+  float: left;
 }
 
 p {
@@ -82,10 +82,6 @@ input {
   text-align: center;
 }
 
-.answer {
-  
-}
-
 .page-header {
   border: none;
 
@@ -93,3 +89,5 @@ input {
 footer {
   margin-top: 20px;
 }
+
+@media screen and (min-width: 860px) {

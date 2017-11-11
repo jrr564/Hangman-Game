@@ -14,7 +14,7 @@ var wordList = [
 
 var word=""; // the word we want someone to guess
 var target = []; // where we put the answer
-var guessesLeft = 8;
+var lives = 7;
 var guessedLetters = [];
 
 //so everything can load
@@ -25,10 +25,13 @@ function shell(){ // Pick a random word
   for (var i = 0; i < word.length; i++) {
     target[i] = "_";
   }
+
   document.getElementById("answer").innerHTML= target.join(" ");
-  document.getElementById("pic").src= "Aliens.jpg";
+  document.getElementById("pic").src= "Futurama-Fry.jpg";
   document.getElementById("message").innerHTML= "Pick a letter. Hit Guess.";
   document.getElementById("guessed").innerHTML= guessedLetters;
+  document.getElementById("lives").innerHTML= "u have " + lives + " more guesses"
+
 }
 shell();
 
@@ -61,14 +64,27 @@ function guessOne() {
         // if no remaining letters, hurray, you won
         if (remaining_letters == 0) {
             showThisMessage = "YES! You guessed the word";
+            document.getElementById("pic").src= "assets/images/success_kid.jpg";
+            document.getElementById("guessed").innerHTML= ""
+            document.getElementById("lives").innerHTML= ""
+
         }
+
 
         // (otherwise) if we have no message, wrong guess 
         if (showThisMessage === "") {
-            showThisMessage = "Sorry, no "+guess;
+            showThisMessage = "ain't no "+guess;
             guessedLetters.push(guess);
-            document.getElementById("guessed").innerHTML= guessedLetters;
+            document.getElementById("guessed").innerHTML= "u guessed " + guessedLetters;
+            lives -= 1;
+            document.getElementById("lives").innerHTML= "u have " + lives + " more guesses"
 
+        }
+
+        if (lives <= 0) {
+            document.getElementById("lives").innerHTML= "u lose";
+            document.getElementById("pic").src= "assets/images/1yx606.jpg";
+            showThisMessage = "press ctrl r for new word";
         }
 
         // Update the puzzle
