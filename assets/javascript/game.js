@@ -2,14 +2,12 @@
 //bank of words to guess
 var wordList = [
         "drakeposting",
-        "jordan",
+        "cryingjordan",
         "success",
-        "girlfriend",
-        "arthur",
+        "attachedgirlfriend",
         "futurama",
         "spongebob",
-        "wonka",    
-        "aliens"
+        "willywonka",
 ];
 
 var word=""; // the word we want someone to guess
@@ -77,8 +75,7 @@ function guessOne() {
             guessedLetters.push(guess);
             document.getElementById("guessed").innerHTML= "u guessed " + guessedLetters;
             lives -= 1;
-            document.getElementById("lives").innerHTML= "u have " + lives + " more guesses"
-
+            document.getElementById("lives").innerHTML= "u have " + lives + " more guesses";
         }
 
         if (lives <= 0) {
